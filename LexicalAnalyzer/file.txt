@@ -1,0 +1,90 @@
+#include <stdio.h>
+#define MAX 500
+#define MSG "Processing Data"
+
+// Global variables
+int count = 0, total = 100;
+float rate = 12.75f;
+char flag = '#';
+
+// Function declaration
+void compute(int x, float y);
+
+int main()
+{
+    int a = 10, b = 0x12AF, c = 0123, d = 0b10101;   // valid constants
+    float result = 0.0;
+    char ch = 'A';
+    
+    // Invalid constants
+    int wrong1 = 0x12KAF;     // invalid
+    int wrong2 = 08923;       // invalid octal
+    int wrong3 = 0b12011;     // invalid binary
+
+    // Invalid char
+    char bad = 'XY';          // invalid character constant
+
+    // Print messages
+    printf(MSG);
+    printf("Count: %d", count);
+
+    // Invalid printf
+    printf["Hello"];          // invalid
+    printf("Missing quote);   // invalid
+
+    // Arithmetic with errors
+    result = a + b ** 2 - 5;  // ** is invalid
+    rate = ++rate + --count @ 2; // @ is invalid
+
+    // If-else block
+    if (a < b && count >= 0)
+        printf("OK\n");
+    else if (total = 500)     // assignment inside condition
+        printf("Warning\n");
+    else
+        printf("Fail\n");
+
+    // Loop with errors
+    for (int i = 0; i < 10; i++
+        result += i;
+
+    while (a < MAX {
+        a++;
+    }
+
+    // Do-while with missing ) 
+    do {
+        b--;
+    } while b > 0;
+
+    // Switch block
+    switch(ch) {
+        case 'A':
+            printf("Letter A\n");
+            break;
+        case 'B':
+            printf("Letter B\n");
+            break
+        default:
+            printf("Other\n");
+    }
+
+    compute(a, rate);   // function call
+
+    return 0;
+}
+
+// Function definition
+void compute(int x, float y)
+{
+    float ans = x * y + 25.3;
+
+    // Invalid variable names
+    int 1num = 25;         // invalid
+    float %=3value;        // invalid
+
+    // Invalid operators
+    ans = ans <<< 2;       // invalid operator
+
+    printf("Answer: %f\n", ans);
+}

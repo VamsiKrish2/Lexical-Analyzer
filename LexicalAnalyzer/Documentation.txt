@@ -1,0 +1,139 @@
+NAME : N VAMSIKRISHNA
+BATCH ID : 25021_185
+
+1. Title
+
+Design and Implementation of a Lexical Analyzer in C
+
+2. Objective
+
+To develop a lexical analyzer that reads a C program and identifies tokens such as keywords, identifiers, constants, operators, strings, special symbols, and also reports lexical errors.
+
+3. Introduction
+
+Lexical Analysis is the first phase of a compiler. It scans the source code character by character and groups them into meaningful sequences called tokens.
+Examples:
+
+Keywords → int, float, if
+
+Identifiers → num, count
+
+Operators → +, -, ==
+
+Constants → 10, 3.14
+It also removes whitespaces, comments, and detects invalid tokens.
+
+4. Scope
+
+This project performs:
+
+Token identification
+
+Lexical error detection
+
+Symbol table generation
+
+Categorization of tokens
+
+Input file reading and scanning
+
+5. System Requirements
+
+Software: GCC/CodeBlocks/VS Code
+Hardware: 2 GB RAM, basic processor, 100 MB free disk space
+
+6. Working Methodology
+
+Read the input C source file.
+
+Ignore whitespace, newline, tab, and comments.
+
+Identify tokens using character-by-character scanning.
+
+Categorize tokens into keywords, identifiers, constants, operators, and separators.
+
+Detect invalid characters, invalid identifiers, invalid numbers, and unterminated strings.
+
+Maintain a symbol table for identifiers.
+
+Print token list and errors.
+
+7. Token Categories
+
+Keywords: int, float, char, if, else, while, for, do, return, switch, case, break
+Identifiers: Must start with a letter or _
+Operators: +, -, *, /, %, =, ==, !=, <=, >=, &&, ||, ++, --
+Constants: decimal, hex, octal, float, character
+Separators: ( ) { } [ ] ; , . " '
+
+8. Error Handling
+
+The lexical analyzer reports:
+
+Invalid identifiers (2abc, num#1)
+
+Invalid constants (0891, 0x12KZ, 0b1021)
+
+Invalid character constants ('AB')
+
+Unterminated string ("hello)
+
+Illegal symbols (@, ?, <<<)
+
+Missing quotes or unsupported characters
+
+9. System Design (Overview)
+
+Source Code → Lexical Analyzer → Tokens + Errors + Symbol Table
+
+10. Sample Output Format
+Line 3: Keyword → int
+Line 3: Identifier → value
+Line 3: Operator → =
+Line 3: Number → 10
+Line 3: Separator → ;
+
+Error (Line 7): Invalid Hex Constant → 0x12KAF
+Error (Line 9): Invalid Character Constant → 'XY'
+Error (Line 12): Unknown Symbol '@'
+
+Symbol Table:
+ID      TYPE      LINE
+value   int       3
+rate    float     8
+
+11. Applications
+
+Compiler design
+
+Interpreter development
+
+Syntax highlighting
+
+IDE code analysis
+
+Programming language design
+
+12. Advantages
+
+Fast processing
+
+Early error detection
+
+Cleaner syntax analysis
+
+Simplifies compiler phases
+
+13. Conclusion
+
+The lexical analyzer successfully scans a C program, identifies tokens, detects lexical errors, and generates a symbol table. It demonstrates the essential first stage of any compiler and enhances understanding of compiler design.
+
+14. Future Enhancements
+
+DFA state diagrams
+
+Macro processing
+
+Highlighting and GUI interface
+
+Integration with Syntax Analyzer (Parser)
